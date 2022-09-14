@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 const GlobalStyle = createGlobalStyle`
 
 
@@ -10,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         /* font-family: 'Open Sans', sans-serif; */
         font-family: 'Poppins', sans-serif;
+        /* font-family: 'Outfit', sans-serif; */
         overflow: hidden;
     }
 
@@ -45,12 +45,46 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
-    .move{
-        overflow: hidden;
-opacity: 0.5;
-      transform: translateX(-10rem)
+    hr{
+        margin: 1.5rem 0;
+        background: #646466;
+    width: 100%;
+    height: 1px;
+    opacity: 0.3;
     }
 
+ 
+
+    .move_left{
+        transform: translateX(-10rem)
+    }
+    .move_right{
+             transform: translateX(10rem)
+    }
+    
+    .rightSidebarMove{
+        right: -12rem;
+        @media (max-width: 920px) {
+    right: -20rem;
+    
+}
+    }
+    .rightSidebarReset{
+     right: 0rem;
+    }
+
+    .leftSidebarMove{
+        left: 0rem;
+        @media (max-width: 920px) {
+    left: -30rem;
+    
+}
+     
+    }
+    .leftSidebarReset{
+        left: 0rem;
+
+    }
 
  
 `;

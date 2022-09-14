@@ -1,27 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import HamburgerMenu from "../../HamburgerMenu";
 import { NavLink } from "react-router-dom";
 import { RiArrowDropRightLine, RiArrowDropDownLine } from "react-icons/ri";
 import { useLocation } from "react-router-dom";
+import { AppContext } from "../../../App";
 
-const RightSidebar = ({ open, setOpen }) => {
+const RightSidebar = ({ navRight, setNavRight }) => {
   const [currPage, setCurrPage] = useState("");
   const [expand, setexpand] = useState(false);
   const { pathname } = useLocation();
+  const { setNavLeft } = useContext(AppContext);
+
   useEffect(() => {
     setCurrPage(pathname.slice(1, pathname.length) || "home");
   }, [pathname]);
 
   return (
-    <Container style={open ? { right: "0rem" } : { right: "-15rem" }}>
+    <Container
+      className={`${navRight ? "rightSidebarReset" : "rightSidebarMove"}`}
+    >
+      <RightSidebergerTop>
+        <div
+          onClick={() => {
+            setNavRight(!navRight);
+            setNavLeft(false);
+          }}
+        >
+          <HamburgerMenu open={navRight} />
+        </div>
+      </RightSidebergerTop>
+
       <Wrapper>
-        <RightSidebergerTop>
-          <div onClick={() => setOpen(!open)}>
-            <HamburgerMenu open={open} />
-          </div>
-        </RightSidebergerTop>
-        {open ? (
+        {navRight ? (
           <Navbar>
             <ul>
               <li>
@@ -45,11 +56,12 @@ const RightSidebar = ({ open, setOpen }) => {
                       isActive ? "active_menu" : undefined
                     }
                   >
-                    Portfolio{" "}
+                    Portfolio
                   </NavLink>
-                  {expand ? <RiArrowDropDownLine /> : <RiArrowDropRightLine />}
+                  {expand ? <RiArrowDropDownLine size={20}/> : <RiArrowDropRightLine size={20}/>}
                 </span>
                 {expand && (
+                  
                   <ul>
                     <li>Portfolio 1</li>
                     <li>Portfolio 2</li>
@@ -92,6 +104,7 @@ const RightSidebar = ({ open, setOpen }) => {
         ) : (
           <CurrentPage>{currPage && <p>{currPage}</p>}</CurrentPage>
         )}
+
         <RightSidebergerBottom>
           <div className="circle">
             <div className="bn">BN</div>
@@ -109,14 +122,24 @@ export default RightSidebar;
 
 const Container = styled.div`
   background: ${({ theme }) => theme.bg2};
-  overflow-x: hidden;
-  width: 23rem;
-  height: 100%;
-  transition: all 0.7s ease-in-out;
+  width: 20rem;
   position: absolute;
   top: 0;
-  bottom: 0;
+
+  height: 100%;
+  transition: all 0.7s ease-in-out;
   color: #8c8c8e;
+`;
+const RightSidebergerTop = styled.div`
+  width: 100%;
+  background: ${({ theme }) => theme.bg1};
+  padding-left: 3rem;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  @media (max-width: 920px) {
+    display: none;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -124,25 +147,13 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-const RightSidebergerTop = styled.div`
-  width: 100%;
-
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: ${({ theme }) => theme.bg1};
-  padding-left: 3rem;
-  height: 7rem;
-  display: flex;
-  align-items: center;
-`;
-
 const RightSidebergerBottom = styled.div`
   width: 100%;
   height: 10rem;
   background: ${({ theme }) => theme.bg1};
+
   position: absolute;
-  bottom: 0rem;
+  bottom: 5.5rem;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -191,7 +202,8 @@ const RightSidebergerBottom = styled.div`
 
 const CurrentPage = styled.div`
   transform: rotate(90deg);
-  transform-origin: -15% 538%;
+  transform-origin: 0% 300%;
+
   p {
     color: #8c8c8e;
 
@@ -218,26 +230,34 @@ const Navbar = styled.nav`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+
+  margin-top: 5rem;
+
   ul {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
     flex-direction: column;
+     justify-content: center;
+   align-items: center;
+    overflow-y: auto;
 
     li {
+      width: 100%;
       color: #8c8c8e;
-      padding: 7px 30px;
+      margin: 0.3rem 0rem;
+      padding: 0rem 1rem 0rem 3rem;
       display: inline-block;
       width: 100%;
+      /* background-color: green; */
       text-transform: uppercase;
       font-size: 11px;
       letter-spacing: 1px;
       font-weight: 500;
-
       animation: move 0.7s ease-in-out;
+ 
 
       @keyframes move {
         0% {
@@ -249,21 +269,13 @@ const Navbar = styled.nav`
         }
       }
 
-      .active_menu {
-        color: #fff;
-      }
-
-      .space-between {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        svg {
-          font-size: 2.5rem;
-        }
-      }
-
       a {
-        width: 20rem;
+
+        /* padding: .5rem 15rem .5rem 0rem; */
+        padding-right: 10rem;
+        /* padding-top: .5rem; */
+        /* padding-bottom: .5rem; */
+        /* background-color: red; */
         color: #8c8c8e;
         transition: 0.2s ease-in-out;
 
@@ -271,7 +283,21 @@ const Navbar = styled.nav`
           color: #fff;
         }
       }
+
+      .active_menu {
+        color: #fff;
+       
+      }
+
+      .space-between {
+        display: flex;
+        /* justify-content: space-between;
+        align-items: center; */
+      
+      }
+
       ul {
+        background: ${({ theme }) => theme.bg1};
         li {
           transition: 0.2s ease-out;
           animation: move 0.7s ease-in-out;

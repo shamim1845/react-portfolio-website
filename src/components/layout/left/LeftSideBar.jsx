@@ -1,13 +1,20 @@
-import React, { useState, useEffect } from "react";
+
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { AppContext } from "../../../App";
 import BottomBar from "./BottomBar";
 import Profile from "./Profile";
+import Skills from "./Skills";
 
 const LeftSideBar = () => {
+ const {navLeft} = useContext(AppContext);
+ 
   return (
-    <Container>
+    <Container  className={`${navLeft ? "leftSidebarReset" : "leftSidebarMove" }`}>
       <Wrapper>
         <Profile />
+      <Skills />
         <BottomBar />
       </Wrapper>
     </Container>
@@ -18,14 +25,23 @@ export default LeftSideBar;
 
 const Container = styled.div`
   background: ${({ theme }) => theme.bg2};
+
   overflow-x: hidden;
-  width: 39rem;
+ width: 29rem;
   height: 100%;
-  transition: all 0.7s ease-in-out;
-  color: #8c8c8e;
+  transition: all .7s ease-in-out;
+  color: ${({theme}) => theme.grayColor};
+  position: absolute;
+  top: 0;
+  left: 0;
+@media (max-width: 920px) {
+
+}
+
 `;
 const Wrapper = styled.div`
   position: relative;
   height: 100%;
   width: 100%;
+ 
 `;
