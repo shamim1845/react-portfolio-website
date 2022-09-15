@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { FaExpand } from "react-icons/fa";
+import { useState } from "react";
 
 const Profile = () => {
+  const [show, setShow] =  useState(true);
+
+console.log(show);
   return (
     <Container>
       <div className="avatar">
@@ -15,11 +19,17 @@ const Profile = () => {
             {" "}
             <FaExpand />
           </span>
-          <div className="lamp_light">
+          <div className="lamp_light" onMouseOver={() => setShow(true)} onMouseLeave={() => setShow(false)}>
             <div className="lamp_light_wrapper">
               <div className="available_outer"></div>
               <div className="available_inner"></div>
             </div>
+          </div>
+        </div>
+        <div className={`available_info ${show && 'showcontainer'}`}>
+          <div className="available_info_inner">
+            <p>I am available for freelance hire</p>
+            <div></div>
           </div>
         </div>
       </div>
@@ -39,16 +49,17 @@ const Container = styled.div`
   width: 100%;
   padding: 3rem;
   background: ${({ theme }) => theme.bg1};
-    z-index: 10;
+  z-index: 10;
   @media (max-width: 920px) {
-padding: 0;
-}
+    padding: 0;
+  }
 
   .avatar {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
 
     .avatar_wrapper {
       width: 13rem;
@@ -131,6 +142,37 @@ padding: 0;
           }
         }
       }
+    }
+    .available_info {
+      width: 10rem;
+      height: 3.8rem;
+      position: absolute;
+      right: -10rem;
+      top: 12rem;
+      /* background-color: ${({ theme }) => theme.bg2}; */
+      background-color: #229922fd;
+      color: ${({ theme }) => theme.lightColor};
+      border-radius: 0 5px 5px 5px;
+      transition: all .7s ease-in-out;
+      
+
+      @media (max-width: 920px) {
+      
+        /* right: 0; */
+      }
+
+      .available_info_inner {
+        vertical-align: center;
+        padding: 0.5rem;
+     
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+    .showcontainer{
+opacity: 1;
+right: .5rem;
     }
   }
   .avatar_name {

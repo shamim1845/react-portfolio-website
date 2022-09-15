@@ -13,7 +13,7 @@ const ProfileInfo = () => {
         <div className="info">
             <p className='first_child'>Age:</p> <p className='last_child'>22</p>
         </div>
-        <hr />
+        <div className="divider"></div>
     </Container>
   )
 }

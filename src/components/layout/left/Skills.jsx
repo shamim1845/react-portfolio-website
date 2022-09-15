@@ -23,7 +23,7 @@ export default Skills;
 
 const Container = styled.div`
   height: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
   &::-webkit-scrollbar {
@@ -36,7 +36,7 @@ const Wrapper = styled.div`
 
     padding: 28rem 3rem 7rem 3rem ;
     @media (max-width: 920px) {
-        padding-bottom: 11rem;
-    padding-top: 21rem;
+        padding-bottom: 13rem;
+    padding-top: 23rem;
 }
 `

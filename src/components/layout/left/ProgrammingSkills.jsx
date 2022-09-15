@@ -6,12 +6,12 @@ const ProgrammingSkills = () => {
   return (<>
  
     <Container>
-   <HorizontalProgressBar tech={'HTML'} percent={70} />
-   <HorizontalProgressBar tech={'CSS'} percent={60} />
-   <HorizontalProgressBar tech={'JavaScript'} percent={70} />
-   <HorizontalProgressBar tech={'React'} percent={90} />
+   <HorizontalProgressBar tech={'HTML'} percent={70} delay={20}/>
+   <HorizontalProgressBar tech={'CSS'} percent={60} delay={20}/>
+   <HorizontalProgressBar tech={'JavaScript'} percent={70} delay={20}/>
+   <HorizontalProgressBar tech={'React'} percent={90} delay={20}/>
     </Container>
-    <hr />
+    <div className="divider"></div>
     </>
   );
 };

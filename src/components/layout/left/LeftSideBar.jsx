@@ -27,7 +27,7 @@ const Container = styled.div`
   background: ${({ theme }) => theme.bg2};
 
   overflow-x: hidden;
- width: 29rem;
+ width: 31rem;
   height: 100%;
   transition: all .7s ease-in-out;
   color: ${({theme}) => theme.grayColor};

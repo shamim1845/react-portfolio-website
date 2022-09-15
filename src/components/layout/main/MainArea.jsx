@@ -40,13 +40,13 @@ export default MainArea;
 const Container = styled.div`
   width: 100%;
   height: 100%;
- 
+
   display: flex;
   justify-content: space-between;
 
 
   @media (min-width: 920px) {
-    padding-left: 29rem;
+    padding-left: 31rem;
   padding-right: 8rem;
   }
 
@@ -65,5 +65,11 @@ overflow-y: auto;
 }
 
 
-  background-image: url("https://images.pexels.com/photos/103123/pexels-photo-103123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url("https://images.unsplash.com/photo-1647815162178-49b00f231b0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2MHxibzhqUUtUYUUwWXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+  
 `;

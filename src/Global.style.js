@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
 
     html{
         font-size: 62.5%;
+        scroll-behavior: smooth;
     }
 
     body{
@@ -52,7 +53,13 @@ const GlobalStyle = createGlobalStyle`
     height: 1px;
     opacity: 0.3;
     }
-
+.divider{
+    margin: 1.5rem 0;
+    background: #646466;
+    width: 100%;
+    height: 1px;
+    opacity: 0.3;
+}
  
 
     .move_left{
@@ -67,7 +74,7 @@ const GlobalStyle = createGlobalStyle`
         @media (max-width: 920px) {
     right: -20rem;
     
-}
+    }
     }
     .rightSidebarReset{
      right: 0rem;
@@ -76,7 +83,7 @@ const GlobalStyle = createGlobalStyle`
     .leftSidebarMove{
         left: 0rem;
         @media (max-width: 920px) {
-    left: -30rem;
+    left: -31rem;
     
 }
      

@@ -21,7 +21,7 @@ const LanguageSkills = () => {
         </div>
         
     </Container>
-    <hr />
+    <div className="divider"></div>
     </>
   )
 }
