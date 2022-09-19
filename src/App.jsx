@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import MobileNavbar from "./components/layout/MobileNavbar";
 import RightSidebar from "./components/layout/right/RightSidebar";
+import FullImageContainer from "./components/FullImageContainer";
 
 
 export const AppContext = createContext();
@@ -33,12 +34,15 @@ function App() {
       <GlobalStyle />
       <AppContext.Provider value={value}>
       <Wrapper>
-          <MobileNavbar />
         <AppContainer>
+          <MobileNavbar />
           <LeftSideBar />
           <MainArea />
           <RightSidebar navRight={navRight} setNavRight={setNavRight} />
+{/* <FullImageContainer /> */}
         </AppContainer>
+
+
       </Wrapper>
       </AppContext.Provider>
     </ThemeProvider>
@@ -53,13 +57,13 @@ const Wrapper = styled.div`
   max-width: 1440px;
   margin: auto;
   padding: 1.5rem;
-
+  display: flex;
+  justify-content: space-between;
 `;
 
 const AppContainer = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
+
   position: relative;
 `;

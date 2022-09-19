@@ -20,7 +20,7 @@ const AdditionalSkills = () => {
             <BsCheckLg size={9} /> <span>Git, Github knowledge</span>{" "}
           </li>
           <li>
-            <BsCheckLg size={9} /> <span> knowledge</span>{" "}
+            <BsCheckLg size={9} /> <span> Rest API</span>{" "}
           </li>
         </ul>
       </div>

@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { FaExpand } from "react-icons/fa";
 import { useState } from "react";
+import HamburgerMenu from "../../HamburgerMenu";
+import { AppContext } from "../../../App";
 
 const Profile = () => {
   const [show, setShow] =  useState(true);
 
+  const {setNavLeft, navLeft} = useContext(AppContext);
+
 console.log(show);
-  return (
+  return (<>
+
     <Container>
       <div className="avatar">
         <div className="avatar_wrapper">
@@ -26,6 +31,9 @@ console.log(show);
             </div>
           </div>
         </div>
+        <div className="hamburger_icon" style={{opacity: `${navLeft ? "1" : "0"}`}} onClick={() => setNavLeft(!navLeft)}>
+          <HamburgerMenu open={true}/>
+        </div>
         <div className={`available_info ${show && 'showcontainer'}`}>
           <div className="available_info_inner">
             <p>I am available for freelance hire</p>
@@ -38,6 +46,8 @@ console.log(show);
         Front-end Developer, <br /> focused on MERN stack Development
       </p>
     </Container>
+   
+    </>
   );
 };
 
@@ -47,7 +57,7 @@ const Container = styled.div`
   left: 0;
   top: 0;
   width: 100%;
-  padding: 3rem;
+  padding: 3rem 0;
   background: ${({ theme }) => theme.bg1};
   z-index: 10;
   @media (max-width: 920px) {
@@ -59,7 +69,7 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+   position: relative;
 
     .avatar_wrapper {
       width: 13rem;
@@ -143,13 +153,26 @@ const Container = styled.div`
         }
       }
     }
+    .hamburger_icon{
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+display:none;
+
+      
+      @media (max-width: 920px) {
+    display: block;
+ 
+      }
+
+      
+    }
     .available_info {
       width: 10rem;
       height: 3.8rem;
       position: absolute;
       right: -10rem;
-      top: 12rem;
-      /* background-color: ${({ theme }) => theme.bg2}; */
+      top: 9rem;
       background-color: #229922fd;
       color: ${({ theme }) => theme.lightColor};
       border-radius: 0 5px 5px 5px;
@@ -157,8 +180,8 @@ const Container = styled.div`
       
 
       @media (max-width: 920px) {
-      
-        /* right: 0; */
+      top: 9rem;
+        right: -10rem;
       }
 
       .available_info_inner {

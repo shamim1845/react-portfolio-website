@@ -29,7 +29,7 @@ const Container = styled.div`
   bottom: 0rem;
   left: 0;
 @media (max-width: 920px) {
-  bottom: 5.5rem;
+  /* bottom: 5.5rem; */
 }
 
 .wrapper{

@@ -14,8 +14,8 @@ const MobileNavbar = () => {
         <div className="left_side_menu" onClick={() => {setNavLeft(!navLeft); setNavRight(false)}}>
             <BsThreeDotsVertical />
         </div>
-        <div className="right_side_menu" onClick={() => {setNavRight(!navRight); setNavLeft(false)}}>
-            <HamburgerMenu open={navRight} />
+        <div className="right_side_menu" style={{display: `${navRight ? 'none' : 'block'}`}} onClick={() => {setNavRight(!navRight); setNavLeft(false)}}>
+            <HamburgerMenu open={navRight}/>
         </div>
     </Container>
   )
@@ -31,7 +31,7 @@ background-color: ${({theme}) => theme.bg2};
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
+    z-index: 100;
     @media(min-width: 921px) {
     display:none;
   }

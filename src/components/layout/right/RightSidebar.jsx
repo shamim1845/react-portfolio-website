@@ -138,7 +138,8 @@ const RightSidebergerTop = styled.div`
   display: flex;
   align-items: center;
   @media (max-width: 920px) {
-    display: none;
+    /* display: none; */
+    /* background: ${({ theme }) => theme.bg2}; */
   }
 `;
 
