@@ -34,8 +34,10 @@ z-index:999;
   position: absolute;
   top: 0;
   left: 0;
-@media (max-width: 920px) {
 
+@media (max-width: 920px) {
+    left: -31rem;
+    
 }
 
 `;
