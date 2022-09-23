@@ -36,7 +36,7 @@ z-index:999;
   left: 0;
 
 @media (max-width: 920px) {
-   // left: -31rem;
+   left: -31rem;
     
 }
 
