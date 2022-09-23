@@ -23,6 +23,7 @@ function App() {
   const theme = {
     bg1: "linear-gradient(159deg, rgba(37, 37, 50, 0.98) 0%, rgba(35, 35, 45, 0.98) 100%)",
     bg2: "#20202a",
+    grayBg: "linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%)",
     lightColor: "#fafafc",
     grayColor: "#8c8c8e",
     orangeColor: "#FFC107",

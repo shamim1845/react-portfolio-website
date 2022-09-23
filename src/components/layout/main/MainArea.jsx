@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 
-
 import { Routes, Route } from "react-router-dom";
 import Home from "../../pages/Home";
 import Portfolio from "../../pages/Portfolio";
@@ -12,26 +11,21 @@ import Error from "../../pages/Error";
 import { AppContext } from "../../../App";
 
 const MainArea = () => {
-
- const {navRight} = useContext(AppContext);
+  const { navRight } = useContext(AppContext);
 
   return (
- 
-      <Container >
-        <Content >
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/history" element={<History />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
-        </Content>
-
-       
-      </Container>
-
+    <Container>
+      <Content>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </Content>
+    </Container>
   );
 };
 
@@ -40,36 +34,38 @@ export default MainArea;
 const Container = styled.div`
   width: 100%;
   height: 100%;
-
   display: flex;
   justify-content: space-between;
 
-
   @media (min-width: 920px) {
     padding-left: 31rem;
-  padding-right: 8rem;
+    padding-right: 8rem;
   }
-
-  
 `;
 const Content = styled.div`
-overflow-y: auto;
+  overflow: hidden;
   width: 100%;
   height: 100%;
   transition: all 0.7s ease-in-out;
   margin: auto;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none; 
-&::-webkit-scrollbar {
-    display: none;
-}
 
+  position: relative;
 
-  background-image: url("https://images.unsplash.com/photo-1647815162178-49b00f231b0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2MHxibzhqUUtUYUUwWXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  
-  
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("https://images.pexels.com/photos/2083842/pexels-photo-2083842.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+       opacity: 0.1;
+    z-index: -5;
+   
+  }
 `;

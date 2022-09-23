@@ -25,7 +25,7 @@ export default LeftSideBar;
 
 const Container = styled.div`
   background: ${({ theme }) => theme.bg2};
-
+z-index:999;
   overflow-x: hidden;
  width: 31rem;
   height: 100%;

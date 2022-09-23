@@ -125,7 +125,7 @@ const Container = styled.div`
   width: 20rem;
   position: absolute;
   top: 0;
-
+z-index: 999;
   height: 100%;
   transition: all 0.7s ease-in-out;
   color: #8c8c8e;
