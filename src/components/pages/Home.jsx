@@ -19,7 +19,7 @@ export default Home;
 
 const Container = styled.div`
  width: 100%;
- height: 100vh;
+ height: 100%;
  overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
@@ -27,8 +27,8 @@ const Container = styled.div`
     display: none;
   }
 
-padding: 0 2.5rem;
+padding: 0 2.5rem 5rem 2.5rem;
  @media (max-width: 920px) {
-  padding: 0;
+  padding:0 0rem 10rem 0;
  }
 `

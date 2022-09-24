@@ -45,8 +45,10 @@ const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: 600;
         letter-spacing: 1px;
+        transition: 0.4s ease-in-out;
+        text-transform: uppercase;
     }
 
     hr{
