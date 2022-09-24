@@ -1,9 +1,13 @@
 import React from 'react'
+import styled from 'styled-components';
 
 const Portfolio = () => {
   return (
-    <div>Portfolio</div>
+    <Container className='container'>Portfolio</Container>
   )
 }
 
-export default Portfolio
+export default Portfolio;
+const Container = styled.div`
+  /* background: #adacac; */
+`

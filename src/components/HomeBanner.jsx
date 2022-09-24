@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import AutoWriting from "./AutoWriting";
 import Button from "./Button";
 
@@ -45,8 +44,8 @@ const Container = styled.div`
     background: rgba(30, 30, 40, 0.88);
 
     @media (max-width: 1100px) {
-    display: none;
-  }
+      display: none;
+    }
   }
 
   .wrapper {
@@ -64,25 +63,23 @@ const Container = styled.div`
     h1 {
       line-height: 5rem;
       text-align: start;
-    font-size: 4.5rem;
-    @media (max-width: 1100px) {
-      font-size: 3.5rem;
-    }
-    @media (max-width: 920px) {
       font-size: 4.5rem;
-    
+      @media (max-width: 1100px) {
+        font-size: 3.5rem;
+      }
+      @media (max-width: 920px) {
+        font-size: 4.5rem;
+      }
+      @media (max-width: 600px) {
+        font-size: 4rem;
+      }
+      @media (max-width: 385px) {
+        font-size: 3.5rem;
+      }
+      @media (max-width: 353px) {
+        font-size: 3rem;
+      }
     }
-    @media (max-width: 600px) {
-      font-size: 4rem;
-    }
-    @media (max-width: 385px) {
-      font-size: 3.5rem;
-    }
-    @media (max-width: 353px) {
-      font-size: 3rem;
-    }
-    }
-
 
     position: relative;
 

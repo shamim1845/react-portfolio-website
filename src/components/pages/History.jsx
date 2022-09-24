@@ -1,9 +1,13 @@
 import React from 'react'
+import styled from 'styled-components';
 
 const History = () => {
   return (
-    <div>History</div>
+    <Container className='container'>History</Container>
   )
 }
 
-export default History
+export default History;
+const Container = styled.div`
+
+`

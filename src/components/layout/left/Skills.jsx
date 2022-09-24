@@ -8,12 +8,11 @@ import ProgrammingSkills from "./ProgrammingSkills";
 const Skills = () => {
   return (
     <Container>
-      <Wrapper >
+      <Wrapper>
         <ProfileInfo />
         <LanguageSkills />
         <ProgrammingSkills />
         <AdditionalSkills />
-    
       </Wrapper>
     </Container>
   );
@@ -29,14 +28,12 @@ const Container = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-
 `;
 
 const Wrapper = styled.div`
-
-    padding: 28rem 3rem 7rem 3rem ;
-    @media (max-width: 920px) {
-        padding-bottom: 13rem;
+  padding: 28rem 3rem 7rem 3rem;
+  @media (max-width: 920px) {
+    padding-bottom: 13rem;
     padding-top: 23rem;
-}
-`
+  }
+`;

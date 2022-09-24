@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BsChevronRight } from "react-icons/bs";
 
-const ServiceCard = ({card}) => {
+const ServiceCard = ({ card }) => {
   return (
     <Container>
       <h5>{card.title}</h5>
-      <p>
-     {card.desc}
-      </p>
+      <p>{card.desc}</p>
       <div className="link">
         <Link to={card.link}>ORDER NOW</Link> <BsChevronRight />
       </div>
@@ -45,15 +43,14 @@ const Container = styled.div`
     a {
       color: ${({ theme }) => theme.orangeColor};
       margin-right: 0.5rem;
- 
     }
     svg {
       margin-top: -0.3rem;
       font-size: 1rem;
-      transition:  0.4s ease-in-out;
+      transition: 0.4s ease-in-out;
     }
     &:hover svg {
-      transition:  0.4s ease-in-out;
+      transition: 0.4s ease-in-out;
       transform: translateX(5px);
     }
   }

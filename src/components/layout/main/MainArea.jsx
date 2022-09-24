@@ -1,4 +1,3 @@
-import React, { useContext, useState } from "react";
 import styled from "styled-components";
 
 import { Routes, Route } from "react-router-dom";
@@ -8,11 +7,8 @@ import History from "../../pages/History";
 import Contact from "../../pages/Contact";
 import Blog from "../../pages/Blog";
 import Error from "../../pages/Error";
-import { AppContext } from "../../../App";
 
 const MainArea = () => {
-  const { navRight } = useContext(AppContext);
-
   return (
     <Container>
       <Content>
@@ -38,8 +34,6 @@ const Container = styled.div`
   justify-content: space-between;
 
   @media (min-width: 921px) {
-    padding-left: 31rem;
-    padding-right: 8rem;
   }
 `;
 const Content = styled.div`
@@ -64,8 +58,7 @@ const Content = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-       opacity: 0.1;
+    opacity: 0.1;
     z-index: -5;
-   
   }
 `;

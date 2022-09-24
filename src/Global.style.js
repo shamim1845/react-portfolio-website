@@ -66,6 +66,22 @@ const GlobalStyle = createGlobalStyle`
     opacity: 0.3;
 }
  
+.container{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+    padding: 0 2.5rem 5rem 2.5rem;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media (max-width: 920px) {
+    padding:0 0rem 10rem 0;
+    }
+}
 
     .move_left{
         transform: translateX(-10rem)
@@ -73,17 +89,31 @@ const GlobalStyle = createGlobalStyle`
     .move_right{
              transform: translateX(10rem)
     }
+
+
+
+
     
     .rightSidebarMove{
-        right: -12rem;
-        @media (max-width: 920px) {
-    right: -20rem;
-    
-    }
+     
+        transition: all .7s ease-in-out;
+        max-width: 21rem;
+
     }
     .rightSidebarReset{
-     right: 0rem;
+     
+        transition: all .7s ease-in-out;
+        max-width: 8rem;
+        @media (max-width: 920px) {
+        max-width: 0rem;
+    
+}
     }
+
+
+
+
+
 
     .leftSidebarMove{
         left: 0rem;

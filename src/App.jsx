@@ -9,17 +9,19 @@ import MobileNavbar from "./components/layout/MobileNavbar";
 import RightSidebar from "./components/layout/right/RightSidebar";
 import FullImageContainer from "./components/FullImageContainer";
 
-
 export const AppContext = createContext();
 function App() {
-  const [navLeft, setNavLeft] = useState(false)
-  console.log("🚀 ~ file: App.jsx ~ line 15 ~ App ~ navLeft", navLeft)
+  const [navLeft, setNavLeft] = useState(false);
+  console.log("🚀 ~ file: App.jsx ~ line 15 ~ App ~ navLeft", navLeft);
 
-  const [navRight, setNavRight] = useState(false)
+  const [navRight, setNavRight] = useState(false);
 
   const value = {
-    navLeft, setNavLeft, navRight, setNavRight
-  }
+    navLeft,
+    setNavLeft,
+    navRight,
+    setNavRight,
+  };
   const theme = {
     bg1: "linear-gradient(159deg, rgba(37, 37, 50, 0.98) 0%, rgba(35, 35, 45, 0.98) 100%)",
     bg2: "#20202a",
@@ -27,27 +29,24 @@ function App() {
     lightColor: "#fafafc",
     grayColor: "#8c8c8e",
     orangeColor: "#FFC107",
-  
   };
   return (
-      <BrowserRouter>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <AppContext.Provider value={value}>
-      <Wrapper>
-        <AppContainer>
-          <MobileNavbar />
-          <LeftSideBar />
-          <MainArea />
-          <RightSidebar navRight={navRight} setNavRight={setNavRight} />
-{/* <FullImageContainer /> */}
-        </AppContainer>
-
-
-      </Wrapper>
-      </AppContext.Provider>
-    </ThemeProvider>
-      </BrowserRouter>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <AppContext.Provider value={value}>
+          <Wrapper>
+            <MobileNavbar />
+            <AppContainer>
+              <LeftSideBar />
+              <MainArea />
+              <RightSidebar navRight={navRight} setNavRight={setNavRight} />
+              {/* <FullImageContainer /> */}
+            </AppContainer>
+          </Wrapper>
+        </AppContext.Provider>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
@@ -59,12 +58,20 @@ const Wrapper = styled.div`
   margin: auto;
   padding: 1.5rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  @media (max-width: 920px) {
+    padding: 0 1.5rem;
+  }
 `;
 
 const AppContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
 
-  position: relative;
+  @media (max-width: 920px) {
+  }
 `;

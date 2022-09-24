@@ -1,52 +1,48 @@
-import React, { useContext } from "react";
 import styled from "styled-components";
 import { FaExpand } from "react-icons/fa";
 import { useState } from "react";
-import HamburgerMenu from "../../HamburgerMenu";
-import { AppContext } from "../../../App";
 
 const Profile = () => {
-  const [show, setShow] =  useState(true);
+  const [show, setShow] = useState(true);
 
-  const {setNavLeft, navLeft} = useContext(AppContext);
+  console.log(show);
+  return (
+    <>
+      <Container>
+        <div className="avatar">
+          <div className="avatar_wrapper">
+            <img
+              src="https://elanta.app/nazar/arter-demo-new/img/face-1.jpg"
+              alt="Profile Pic"
+            />
+            <span>
+              {" "}
+              <FaExpand />
+            </span>
+            <div
+              className="lamp_light"
+              onMouseOver={() => setShow(true)}
+              onMouseLeave={() => setShow(false)}
+            >
+              <div className="lamp_light_wrapper">
+                <div className="available_outer"></div>
+                <div className="available_inner"></div>
+              </div>
+            </div>
+          </div>
 
-console.log(show);
-  return (<>
-
-    <Container>
-      <div className="avatar">
-        <div className="avatar_wrapper">
-          <img
-            src="https://elanta.app/nazar/arter-demo-new/img/face-1.jpg"
-            alt="Profile Pic"
-          />
-          <span>
-            {" "}
-            <FaExpand />
-          </span>
-          <div className="lamp_light" onMouseOver={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-            <div className="lamp_light_wrapper">
-              <div className="available_outer"></div>
-              <div className="available_inner"></div>
+          <div className={`available_info ${show && "showcontainer"}`}>
+            <div className="available_info_inner">
+              <p>I am available for freelance hire</p>
+              <div></div>
             </div>
           </div>
         </div>
-        <div className="hamburger_icon" style={{opacity: `${navLeft ? "1" : "0"}`}} onClick={() => setNavLeft(!navLeft)}>
-          <HamburgerMenu open={true}/>
-        </div>
-        <div className={`available_info ${show && 'showcontainer'}`}>
-          <div className="available_info_inner">
-            <p>I am available for freelance hire</p>
-            <div></div>
-          </div>
-        </div>
-      </div>
-      <h5 className="avatar_name">Md Shamim Hossain</h5>
-      <p className="avatar_desc">
-        Front-end Developer, <br /> focused on MERN stack Development
-      </p>
-    </Container>
-   
+        <h5 className="avatar_name">Md Shamim Hossain</h5>
+        <p className="avatar_desc">
+          Front-end Developer, <br /> focused on MERN stack Development
+        </p>
+      </Container>
     </>
   );
 };
@@ -72,7 +68,7 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   position: relative;
+    position: relative;
 
     .avatar_wrapper {
       width: 13rem;
@@ -156,20 +152,7 @@ const Container = styled.div`
         }
       }
     }
-    .hamburger_icon{
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-display:none;
 
-      
-      @media (max-width: 920px) {
-    display: block;
- 
-      }
-
-      
-    }
     .available_info {
       width: 10rem;
       height: 3.8rem;
@@ -179,26 +162,25 @@ display:none;
       background-color: #229922fd;
       color: ${({ theme }) => theme.lightColor};
       border-radius: 0 5px 5px 5px;
-      transition: all .7s ease-in-out;
-      
+      transition: all 0.7s ease-in-out;
 
       @media (max-width: 920px) {
-      top: 9rem;
+        top: 9rem;
         right: -10rem;
       }
 
       .available_info_inner {
         vertical-align: center;
         padding: 0.5rem;
-     
+
         p {
           font-size: 1rem;
         }
       }
     }
-    .showcontainer{
-opacity: 1;
-right: .5rem;
+    .showcontainer {
+      opacity: 1;
+      right: 0.5rem;
     }
   }
   .avatar_name {

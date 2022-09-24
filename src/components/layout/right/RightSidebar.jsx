@@ -7,6 +7,10 @@ import { useLocation } from "react-router-dom";
 import { AppContext } from "../../../App";
 
 const RightSidebar = ({ navRight, setNavRight }) => {
+  console.log(
+    "🚀 ~ file: RightSidebar.jsx ~ line 10 ~ RightSidebar ~ navRight",
+    navRight
+  );
   const [currPage, setCurrPage] = useState("");
   const [expand, setexpand] = useState(false);
   const { pathname } = useLocation();
@@ -18,7 +22,7 @@ const RightSidebar = ({ navRight, setNavRight }) => {
 
   return (
     <Container
-      className={`${navRight ? "rightSidebarReset" : "rightSidebarMove"}`}
+      className={`${navRight ? "rightSidebarMove" : "rightSidebarReset"}`}
     >
       <RightSidebergerTop>
         <div
@@ -38,9 +42,7 @@ const RightSidebar = ({ navRight, setNavRight }) => {
               <li>
                 <NavLink
                   to="/"
-                  className={({ isActive }) =>
-                    isActive ? "active_menu" : undefined
-                  }
+                  className={({ isActive }) => (isActive ? "active_menu" : "")}
                 >
                   Home
                 </NavLink>
@@ -53,15 +55,18 @@ const RightSidebar = ({ navRight, setNavRight }) => {
                   <NavLink
                     to="/portfolio"
                     className={({ isActive }) =>
-                      isActive ? "active_menu" : undefined
+                      isActive ? "active_menu" : ""
                     }
                   >
                     Portfolio
                   </NavLink>
-                  {expand ? <RiArrowDropDownLine size={20}/> : <RiArrowDropRightLine size={20}/>}
+                  {expand ? (
+                    <RiArrowDropDownLine size={20} />
+                  ) : (
+                    <RiArrowDropRightLine size={20} />
+                  )}
                 </span>
                 {expand && (
-                  
                   <ul>
                     <li>Portfolio 1</li>
                     <li>Portfolio 2</li>
@@ -72,9 +77,7 @@ const RightSidebar = ({ navRight, setNavRight }) => {
               <li>
                 <NavLink
                   to="/history"
-                  className={({ isActive }) =>
-                    isActive ? "active_menu" : undefined
-                  }
+                  className={({ isActive }) => (isActive ? "active_menu" : "")}
                 >
                   History
                 </NavLink>
@@ -82,9 +85,7 @@ const RightSidebar = ({ navRight, setNavRight }) => {
               <li>
                 <NavLink
                   to="/contact"
-                  className={({ isActive }) =>
-                    isActive ? "active_menu" : undefined
-                  }
+                  className={({ isActive }) => (isActive ? "active_menu" : "")}
                 >
                   Contact
                 </NavLink>
@@ -92,9 +93,7 @@ const RightSidebar = ({ navRight, setNavRight }) => {
               <li>
                 <NavLink
                   to="/blog"
-                  className={({ isActive }) =>
-                    isActive ? "active_menu" : undefined
-                  }
+                  className={({ isActive }) => (isActive ? "active_menu" : "")}
                 >
                   Blog
                 </NavLink>
@@ -122,13 +121,18 @@ export default RightSidebar;
 
 const Container = styled.div`
   background: ${({ theme }) => theme.bg2};
-  width: 20rem;
-  position: absolute;
-  top: 0;
-z-index: 999;
+  width: 100%;
+  min-width: 8rem;
+  z-index: 900;
   height: 100%;
-  transition: all 0.7s ease-in-out;
   color: #8c8c8e;
+
+  @media (max-width: 920px) {
+    min-width: 0rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 `;
 const RightSidebergerTop = styled.div`
   width: 100%;
@@ -138,8 +142,8 @@ const RightSidebergerTop = styled.div`
   display: flex;
   align-items: center;
   @media (max-width: 920px) {
-    /* display: none; */
-    /* background: ${({ theme }) => theme.bg2}; */
+    visibility: hidden;
+    background: ${({ theme }) => theme.bg2};
   }
 `;
 
@@ -241,8 +245,8 @@ const Navbar = styled.nav`
     width: 100%;
     display: flex;
     flex-direction: column;
-     justify-content: center;
-   align-items: center;
+    justify-content: center;
+    align-items: center;
     overflow-y: auto;
 
     li {
@@ -252,13 +256,11 @@ const Navbar = styled.nav`
       padding: 0rem 1rem 0rem 3rem;
       display: inline-block;
       width: 100%;
-      /* background-color: green; */
       text-transform: uppercase;
       font-size: 11px;
       letter-spacing: 1px;
       font-weight: 500;
       animation: move 0.7s ease-in-out;
- 
 
       @keyframes move {
         0% {
@@ -271,12 +273,7 @@ const Navbar = styled.nav`
       }
 
       a {
-
-        /* padding: .5rem 15rem .5rem 0rem; */
         padding-right: 10rem;
-        /* padding-top: .5rem; */
-        /* padding-bottom: .5rem; */
-        /* background-color: red; */
         color: #8c8c8e;
         transition: 0.2s ease-in-out;
 
@@ -287,31 +284,15 @@ const Navbar = styled.nav`
 
       .active_menu {
         color: #fff;
-       
       }
 
       .space-between {
         display: flex;
-        /* justify-content: space-between;
-        align-items: center; */
-      
       }
 
       ul {
         background: ${({ theme }) => theme.bg1};
         li {
-          transition: 0.2s ease-out;
-          animation: move 0.7s ease-in-out;
-
-          @keyframes move {
-            0% {
-              transform: translateX(15rem);
-            }
-
-            100% {
-              transform: translateX(0rem);
-            }
-          }
           cursor: pointer;
           color: #8c8c8e;
 

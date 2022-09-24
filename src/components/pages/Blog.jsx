@@ -1,9 +1,16 @@
 import React from 'react'
+import styled from 'styled-components';
 
 const Blog = () => {
   return (
-    <div>lorem100</div>
+    <Container className='container'>
+      f
+    </Container>
   )
 }
 
-export default Blog
+export default Blog;
+
+const Container = styled.div`
+ 
+`

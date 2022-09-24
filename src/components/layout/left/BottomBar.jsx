@@ -28,9 +28,7 @@ const Container = styled.div`
   position: absolute;
   bottom: 0rem;
   left: 0;
-@media (max-width: 920px) {
-  /* bottom: 5.5rem; */
-}
+
 
 .wrapper{
   width: 100%;
