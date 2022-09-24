@@ -59,7 +59,7 @@ const Container = styled.div`
   width: 100%;
   padding: 3rem 0;
   background: ${({ theme }) => theme.bg1};
-  /* z-index: 10; */
+  z-index: 10;
   @media (max-width: 920px) {
     padding: 0;
   }
