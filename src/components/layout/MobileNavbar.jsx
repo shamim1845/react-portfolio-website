@@ -32,6 +32,7 @@ background-color: ${({theme}) => theme.bg2};
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    /* display:none; */
     @media(min-width: 921px) {
     display:none;
   }

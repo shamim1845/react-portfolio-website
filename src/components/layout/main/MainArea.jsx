@@ -37,7 +37,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media (min-width: 920px) {
+  @media (min-width: 921px) {
     padding-left: 31rem;
     padding-right: 8rem;
   }
