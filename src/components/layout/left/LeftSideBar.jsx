@@ -33,7 +33,7 @@ z-index:999;
   color: ${({theme}) => theme.grayColor};
   position: absolute;
   top: 0;
-  left: 0;
+  /* left: 0; */
 
 @media (max-width: 920px) {
   // left: -31rem;
