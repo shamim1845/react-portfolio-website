@@ -7,10 +7,13 @@ import History from "../../pages/History";
 import Contact from "../../pages/Contact";
 import Blog from "../../pages/Blog";
 import Error from "../../pages/Error";
+import { useContext } from "react";
+import { AppContext } from "../../../App";
 
 const MainArea = () => {
+  const { navRight } = useContext(AppContext);
   return (
-    <Container>
+    <Container className={ `${navRight ? 'move_left' : ""}`}>
       <Content>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -30,10 +33,13 @@ export default MainArea;
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
+  padding-right: 7rem;
+  transition: all 0.7s ease-in-out;
 
-  @media (min-width: 921px) {
+
+  @media (max-width: 920px) {
+ 
+    padding-right: 0rem;
   }
 `;
 const Content = styled.div`
@@ -42,8 +48,12 @@ const Content = styled.div`
   height: 100%;
   transition: all 0.7s ease-in-out;
   margin: auto;
-
   position: relative;
+
+
+ 
+
+
 
   &::after {
     content: "";

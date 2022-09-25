@@ -7,10 +7,7 @@ import { useLocation } from "react-router-dom";
 import { AppContext } from "../../../App";
 
 const RightSidebar = ({ navRight, setNavRight }) => {
-  console.log(
-    "🚀 ~ file: RightSidebar.jsx ~ line 10 ~ RightSidebar ~ navRight",
-    navRight
-  );
+
   const [currPage, setCurrPage] = useState("");
   const [expand, setexpand] = useState(false);
   const { pathname } = useLocation();
@@ -126,6 +123,11 @@ const Container = styled.div`
   z-index: 900;
   height: 100%;
   color: #8c8c8e;
+  position: absolute;
+    top: 0;
+    right: 0rem;
+    transition:  all 0.7s ease-in-out;
+   
 
   @media (max-width: 920px) {
     min-width: 0rem;

@@ -51,13 +51,7 @@ const GlobalStyle = createGlobalStyle`
         text-transform: uppercase;
     }
 
-    hr{
-        margin: 1.5rem 0;
-        background: #646466;
-    width: 100%;
-    height: 1px;
-    opacity: 0.3;
-    }
+  
 .divider{
     margin: 1.5rem 0;
     background: #646466;
@@ -69,11 +63,10 @@ const GlobalStyle = createGlobalStyle`
 .container{
     width: 100%;
     height: 100%;
+    padding: 0 3.5rem 5rem 2.5rem;
     overflow-y: scroll;
-    -ms-overflow-style: none; /* IE and Edge */
+    -ms-overflow-style: none;
     scrollbar-width: none;
-    padding: 0 2.5rem 5rem 2.5rem;
-
     &::-webkit-scrollbar {
         display: none;
     }
@@ -84,7 +77,14 @@ const GlobalStyle = createGlobalStyle`
 }
 
     .move_left{
-        transform: translateX(-10rem)
+        transform: translateX(-13rem);
+        opacity: 0.4;
+        transition: all 0.55s ease-in-out;
+        
+        @media (max-width: 920px) {
+    transform: translateX(0rem);
+    
+  }
     }
     .move_right{
              transform: translateX(10rem)
@@ -95,19 +95,20 @@ const GlobalStyle = createGlobalStyle`
 
     
     .rightSidebarMove{
-     
-        transition: all .7s ease-in-out;
-        max-width: 21rem;
-
+             max-width: 21rem;
+             transition: all 0.55s ease-in-out;
+             @media (max-width: 920px) {
+                transition: all 0.7s ease-in-out;
+    
+  }
     }
     .rightSidebarReset{
-     
-        transition: all .7s ease-in-out;
+    
         max-width: 8rem;
         @media (max-width: 920px) {
         max-width: 0rem;
-    
-}
+   
+    }
     }
 
 

@@ -60,7 +60,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
+ 
   @media (max-width: 920px) {
     padding: 0 1.5rem;
   }
@@ -71,7 +71,7 @@ const AppContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-
+  position: relative;
   @media (max-width: 920px) {
   }
 `;

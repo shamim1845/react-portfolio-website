@@ -53,11 +53,11 @@ const Container = styled.div`
   left: 0;
   top: 0;
   width: 100%;
-  padding: 3rem 0;
+  padding: 2rem 0;
   background: ${({ theme }) => theme.bg1};
   z-index: 10;
-  @media (max-width: 1000px) {
-    padding: 2rem 0;
+  @media (max-width: 1100px) {
+    padding: 1rem 0;
   }
   @media (max-width: 920px) {
     padding: 0.5rem 0;
