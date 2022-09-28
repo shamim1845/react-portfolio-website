@@ -14,7 +14,7 @@ const HomeBanner = () => {
 
         <AutoWriting />
 
-        <Button />
+        <Button>explore now</Button>
       </div>
     </Container>
   );
@@ -25,9 +25,9 @@ export default HomeBanner;
 const Container = styled.div`
   width: 100%;
   height: 35rem;
+  padding-top: 3rem;
   color: ${({ theme }) => theme.lightColor};
   position: relative;
-  padding-top: 3rem;
 
   @media (max-width: 920px) {
     align-items: center;

@@ -53,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
 
   
 .divider{
-    margin: 1.5rem 0;
+    margin: 2rem 0;
     background: #646466;
     width: 100%;
     height: 1px;
@@ -63,8 +63,8 @@ const GlobalStyle = createGlobalStyle`
 .container{
     width: 100%;
     height: 100%;
-    padding: 0 3.5rem 5rem 2.5rem;
-    overflow-y: scroll;
+    padding: 0 3.5rem 2rem 2.5rem;
+      overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
     &::-webkit-scrollbar {
@@ -73,6 +73,17 @@ const GlobalStyle = createGlobalStyle`
 
     @media (max-width: 920px) {
     padding:0 0rem 10rem 0;
+    margin: 0;
+
+    
+.scrollbar-track{
+  width: 2px;
+  background-color: ${({theme}) => theme.bg2};
+}
+.scrollbar-thumb{
+  width: 2px;
+  background-color: ${({theme}) => theme.orangeColor};
+}
     }
 }
 

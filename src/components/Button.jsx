@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const Button = () => {
+const Button = ({children}) => {
   return (
-    <Container>explore now</Container>
+    <Container>{children}</Container>
   )
 }
 

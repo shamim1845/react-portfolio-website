@@ -34,6 +34,7 @@ export default HorizontalProgressBar;
 
 const Container = styled.div`
   width: 100%;
+  padding: 0.5rem 0;
 
   .wrapper {
     width: 100%;

@@ -23,13 +23,14 @@ export default ProfileInfo;
 
 const Container = styled.div`
   width: 100%;
-  padding-top: 1rem;
+ 
 
   .info {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 5px 0;
     .first_child {
       color: ${({ theme }) => theme.lightColor};
     }

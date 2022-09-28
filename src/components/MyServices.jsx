@@ -29,11 +29,11 @@ const MyServices = () => {
     <Container>
       <h4>My Awesome Services</h4>
       <div className="cards">
-        {data?.map((card) => {
+        {data?.map((card, index) => {
           return (
-            <>
-              <ServiceCard card={card} />
-            </>
+           
+              <ServiceCard key={index} card={card} />
+          
           );
         })}
       </div>
@@ -46,7 +46,10 @@ export default MyServices;
 const Container = styled.div`
   h4 {
     color: ${({ theme }) => theme.lightColor};
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
   .cards {
     display: grid;

@@ -50,6 +50,7 @@ const Container = styled.div`
         color: ${({ theme }) => theme.grayColor};
         line-height: 2rem;
         font-weight: 300;
+        padding: 0.2rem 0;
 
         svg {
           color: ${({ theme }) => theme.orangeColor};

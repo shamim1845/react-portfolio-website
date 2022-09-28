@@ -12,8 +12,6 @@ import FullImageContainer from "./components/FullImageContainer";
 export const AppContext = createContext();
 function App() {
   const [navLeft, setNavLeft] = useState(false);
-  console.log("🚀 ~ file: App.jsx ~ line 15 ~ App ~ navLeft", navLeft);
-
   const [navRight, setNavRight] = useState(false);
 
   const value = {

@@ -5,7 +5,6 @@ import { useState } from "react";
 const Profile = () => {
   const [show, setShow] = useState(true);
 
-  console.log(show);
   return (
     <>
       <Container>
