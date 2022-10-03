@@ -35,11 +35,11 @@ const Container = styled.div`
     display: none;
   }
   .scrollbar-track{
-  width: 1px;
+  width: 0px;
   background-color: ${({theme}) => theme.bg2};
 }
 .scrollbar-thumb{
-  width: 1px;
+  width: 0px;
   background-color: ${({theme}) => theme.orangeColor};
 }
 `;

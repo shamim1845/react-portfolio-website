@@ -7,21 +7,28 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        /* font-family: 'Open Sans', sans-serif; */
         font-family: 'Poppins', sans-serif;
+        /* font-family: 'Open Sans', sans-serif; */
         /* font-family: 'Outfit', sans-serif; */
-        overflow: hidden;
+        
+       -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+        display: none;
+             }
     }
 
     html{
         font-size: 62.5%;
         scroll-behavior: smooth;
-    }
+        overflow: hidden;
+        }
 
     body{
-        background: #191923;
+            background: #191923;
        
     }
+
 
     h1{
         font-size: 4rem;
@@ -63,42 +70,39 @@ const GlobalStyle = createGlobalStyle`
 .container{
     width: 100%;
     height: 100%;
-    padding: 0 3.5rem 2rem 2.5rem;
-      overflow-y: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    padding: 0 10rem 0 2rem ;
 
     @media (max-width: 920px) {
-    padding:0 0rem 10rem 0;
+    height: auto;
+    padding:0 1rem 5rem 1rem;
     margin: 0;
 
     
 .scrollbar-track{
-  width: 2px;
-  background-color: ${({theme}) => theme.bg2};
+    width: 2px;
+    background-color: ${({ theme }) => theme.bg2};
 }
 .scrollbar-thumb{
-  width: 2px;
-  background-color: ${({theme}) => theme.orangeColor};
+    width: 2px;
+    background-color: ${({ theme }) => theme.orangeColor};
 }
     }
 }
 
-    .move_left{
+    .content_move_left{
         transform: translateX(-13rem);
-        opacity: 0.4;
+        opacity: 0.5;
         transition: all 0.55s ease-in-out;
         
         @media (max-width: 920px) {
-    transform: translateX(0rem);
+          transform: translateX(0rem);
     
-  }
+         }
     }
-    .move_right{
-             transform: translateX(10rem)
+
+    .content_move_right{
+              transition: all 0.55s ease-in-out;
+             transform: translateX(0rem)
     }
 
 
@@ -106,7 +110,7 @@ const GlobalStyle = createGlobalStyle`
 
     
     .rightSidebarMove{
-             max-width: 21rem;
+             right: 0rem;
              transition: all 0.55s ease-in-out;
              @media (max-width: 920px) {
                 transition: all 0.7s ease-in-out;
@@ -114,10 +118,10 @@ const GlobalStyle = createGlobalStyle`
   }
     }
     .rightSidebarReset{
-    
-        max-width: 8rem;
+        transition: all 0.55s ease-in-out;
+        right: -13rem;
         @media (max-width: 920px) {
-        max-width: 0rem;
+        right: -22rem;
    
     }
     }
@@ -130,7 +134,7 @@ const GlobalStyle = createGlobalStyle`
     .leftSidebarMove{
         left: 0rem;
         @media (max-width: 920px) {
-    left: -31rem;
+    left: -32rem;
     
 }
      

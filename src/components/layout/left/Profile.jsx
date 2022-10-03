@@ -1,14 +1,26 @@
 import styled from "styled-components";
 import { FaExpand } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { AppContext } from "../../../App";
 
 const Profile = () => {
   const [show, setShow] = useState(true);
+  const { navLeft, setNavLeft, navRight, setNavRight } = useContext(AppContext);
 
   return (
     <>
       <Container>
         <div className="avatar">
+          <div
+            className="menu_btn"
+            onClick={() => {
+              setNavLeft(!navLeft);
+              setNavRight(false);
+            }}
+          >
+            <BsThreeDotsVertical />
+          </div>
           <div className="avatar_wrapper">
             <img
               src="https://elanta.app/nazar/arter-demo-new/img/face-1.jpg"
@@ -180,6 +192,26 @@ const Container = styled.div`
     .showcontainer {
       opacity: 1;
       right: 0.5rem;
+    }
+
+    .menu_btn {
+       position: absolute;
+      top: 1.6rem;
+      right: 2rem;
+  
+      color: #8c8c8e;
+      cursor: pointer;
+      font-size: 2rem;
+      font-weight: 900;
+      visibility: hidden;
+      transition: all 0.7s ease-in-out;
+      @media (max-width: 920px) {
+        visibility: visible;
+      }
+
+      &:hover {
+        color: ${({ theme }) => theme.lightColor};
+      }
     }
   }
   .avatar_name {

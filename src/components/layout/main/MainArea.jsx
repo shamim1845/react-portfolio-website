@@ -9,12 +9,26 @@ import Blog from "../../pages/Blog";
 import Error from "../../pages/Error";
 import { useContext } from "react";
 import { AppContext } from "../../../App";
+import SmoothScroll from "../../SmoothScroll";
+import UseWindowSize from "../../Hooks/UseWindowSize";
+
 
 const MainArea = () => {
   const { navRight } = useContext(AppContext);
+const [width] = UseWindowSize();
+
+
+
   return (
-    <Container className={ `${navRight ? 'move_left' : ""}`}>
-      <Content>
+    <Container  id="my-scrollbar"  className={`${navRight ? "content_move_left" : "content_move_right"}`}>
+      <ScroolContainer>
+        {
+          width> 920 && <SmoothScroll data = {`my-scrollbar`}/> 
+        }
+     
+      </ScroolContainer>
+      <Content  
+       >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
@@ -33,32 +47,22 @@ export default MainArea;
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  padding-right: 7rem;
-  transition: all 0.7s ease-in-out;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+      
 
 
   @media (max-width: 920px) {
- 
-    padding-right: 0rem;
+    overflow-y: auto;
+    height: 100vh;
   }
-`;
-const Content = styled.div`
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  transition: all 0.7s ease-in-out;
-  margin: auto;
-  position: relative;
-
-
- 
-
-
-
-  &::after {
+  @media (min-width: 921px) {
+    &::before {
     content: "";
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -71,4 +75,23 @@ const Content = styled.div`
     opacity: 0.1;
     z-index: -5;
   }
+  }
+
+`;
+const ScroolContainer = styled.div`
+
+`
+const Content = styled.div`
+  width: 100%;
+  height: 100%;
+
+
+  @media (max-width: 920px) {
+
+    margin-top: 7rem;
+    padding-bottom: 7rem;
+  
+  }
+
+
 `;

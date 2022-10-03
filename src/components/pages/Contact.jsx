@@ -26,9 +26,7 @@ const MyServices = () => {
   ];
   return (
     <Container
-      className="container"
-      style={{ overflow: `${navRight ? "hidden" : "auto"}` }}
-    >
+      className="container">
       <h4>Contact information</h4>
       <div className="cards">
         {data?.map((card, index) => {
@@ -37,6 +35,7 @@ const MyServices = () => {
       </div>
       <h4>Get in touch</h4>
       <ContactForm />
+
   
     </Container>
   );

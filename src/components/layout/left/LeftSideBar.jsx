@@ -15,7 +15,7 @@ const LeftSideBar = () => {
       <Wrapper>
         <Profile />
         <Skills />
-        <BottomBar />
+      <BottomBar />
       </Wrapper>
     </Container>
   );
@@ -24,22 +24,21 @@ const LeftSideBar = () => {
 export default LeftSideBar;
 
 const Container = styled.div`
+  overflow: hidden;
   background: ${({ theme }) => theme.bg2};
-
-  z-index: 999;
-  overflow-x: hidden;
-  min-width: 31rem;
+  z-index: 1000;
   height: 100%;
-  transition: all 0.7s ease-in-out;
+  min-width: 31rem;
   color: ${({ theme }) => theme.grayColor};
-
+  transition: all 0.7s ease-in-out;
   @media (max-width: 920px) {
-    position: absolute;
+    position: fixed;
     top: 0;
+    left: 0;
   }
-`;
+  `;
 const Wrapper = styled.div`
-  position: relative;
+position: relative;
   height: 100%;
   width: 100%;
 `;

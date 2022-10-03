@@ -7,7 +7,6 @@ import { useLocation } from "react-router-dom";
 import { AppContext } from "../../../App";
 
 const RightSidebar = ({ navRight, setNavRight }) => {
-
   const [currPage, setCurrPage] = useState("");
   const [expand, setexpand] = useState(false);
   const { pathname } = useLocation();
@@ -45,24 +44,26 @@ const RightSidebar = ({ navRight, setNavRight }) => {
                 </NavLink>
               </li>
               <li>
-                <span
+                <div
                   className="space-between"
                   onClick={() => setexpand(!expand)}
                 >
                   <NavLink
                     to="/portfolio"
                     className={({ isActive }) =>
-                      isActive ? "active_menu" : ""
+                      isActive ? "active_menu " : ""
                     }
                   >
                     Portfolio
                   </NavLink>
-                  {expand ? (
-                    <RiArrowDropDownLine size={20} />
-                  ) : (
-                    <RiArrowDropRightLine size={20} />
-                  )}
-                </span>
+                  <div>
+                    {expand ? (
+                      <RiArrowDropDownLine size={20} />
+                    ) : (
+                      <RiArrowDropRightLine size={20} />
+                    )}
+                  </div>
+                </div>
                 {expand && (
                   <ul>
                     <li>Portfolio 1</li>
@@ -117,21 +118,17 @@ const RightSidebar = ({ navRight, setNavRight }) => {
 export default RightSidebar;
 
 const Container = styled.div`
+  overflow: hidden;
   background: ${({ theme }) => theme.bg2};
-  width: 100%;
-  min-width: 8rem;
-  z-index: 900;
+  z-index: 1000;
   height: 100%;
+  width: 21rem;
   color: #8c8c8e;
   position: absolute;
-    top: 0;
-    right: 0rem;
-    transition:  all 0.7s ease-in-out;
-   
+  top: 0;
 
   @media (max-width: 920px) {
-    min-width: 0rem;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
   }
@@ -144,14 +141,13 @@ const RightSidebergerTop = styled.div`
   display: flex;
   align-items: center;
   @media (max-width: 920px) {
-    visibility: hidden;
-    background: ${({ theme }) => theme.bg2};
+     margin-top: -0.2rem;
   }
 `;
 
 const Wrapper = styled.div`
-  position: relative;
-  height: 100%;
+  width: 100%;
+  height: calc(100% - 7rem);
 `;
 
 const RightSidebergerBottom = styled.div`
@@ -160,7 +156,7 @@ const RightSidebergerBottom = styled.div`
   background: ${({ theme }) => theme.bg1};
 
   position: absolute;
-  bottom: 5.5rem;
+  bottom: 0rem;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -235,11 +231,9 @@ const CurrentPage = styled.div`
 
 const Navbar = styled.nav`
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  overflow-y: auto;
 
   margin-top: 5rem;
 
@@ -249,7 +243,6 @@ const Navbar = styled.nav`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-y: auto;
 
     li {
       width: 100%;
@@ -290,6 +283,8 @@ const Navbar = styled.nav`
 
       .space-between {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
 
       ul {

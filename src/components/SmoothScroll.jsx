@@ -11,7 +11,7 @@ const SmoothScroll = ({data}) => {
     }
 
     const options = {
-damping: 0.03,
+damping: 0.05,
 renderByPixels: true,
 continuousScrolling: true,
 plugins: {

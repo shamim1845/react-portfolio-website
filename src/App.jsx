@@ -5,9 +5,8 @@ import LeftSideBar from "./components/layout/left/LeftSideBar";
 import MainArea from "./components/layout/main/MainArea";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
-import MobileNavbar from "./components/layout/MobileNavbar";
 import RightSidebar from "./components/layout/right/RightSidebar";
-import FullImageContainer from "./components/FullImageContainer";
+import MobileNavbar from "./components/layout/MobileNavbar";
 
 export const AppContext = createContext();
 function App() {
@@ -33,15 +32,15 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <AppContext.Provider value={value}>
-          <Wrapper>
+          <AppContainer>
+        
             <MobileNavbar />
-            <AppContainer>
+            <Wrapper>
               <LeftSideBar />
               <MainArea />
               <RightSidebar navRight={navRight} setNavRight={setNavRight} />
-              {/* <FullImageContainer /> */}
-            </AppContainer>
-          </Wrapper>
+            </Wrapper>
+          </AppContainer>
         </AppContext.Provider>
       </ThemeProvider>
     </BrowserRouter>
@@ -49,27 +48,49 @@ function App() {
 }
 
 export default App;
-const Wrapper = styled.div`
-  height: 100vh;
+
+const AppContainer = styled.div`
   width: 100vw;
   max-width: 1440px;
+  height: 100vh;
   margin: auto;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
- 
+  position: relative;
+  padding: 2rem;
   @media (max-width: 920px) {
-    padding: 0 1.5rem;
+    padding: 0;
+    height: 100%;
   }
 `;
 
-const AppContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
+const Wrapper = styled.div`
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: space-between;
   position: relative;
-  @media (max-width: 920px) {
+
+
+  @media (min-width: 921px) {
+    overflow: hidden;
   }
+  @media (max-width: 920px) {
+    &::before {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("https://images.pexels.com/photos/2083842/pexels-photo-2083842.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -5;
+  }
+  }
+
+  
 `;
