@@ -130,7 +130,7 @@ const Container = styled.div`
   @media (max-width: 920px) {
     position: fixed;
     top: 0;
-    right: 0;
+
   }
 `;
 const RightSidebergerTop = styled.div`

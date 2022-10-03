@@ -34,7 +34,6 @@ const Container = styled.div`
   @media (max-width: 920px) {
     position: fixed;
     top: 0;
-    left: 0;
   }
   `;
 const Wrapper = styled.div`
