@@ -1,12 +1,10 @@
-import React, { useContext } from "react";
 import styled from "styled-components";
-import { AppContext } from "../../App";
 import ContactInfoCard from "../../components/ContactInfoCard";
 import ContactForm from "../ContactForm";
 
 
 const MyServices = () => {
-  const { navRight } = useContext(AppContext);
+
   const data = [
     {
       country: "Bangladesh",

@@ -45,9 +45,9 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  padding: 25rem 3rem 12rem 3rem;
+  padding: 25rem 3rem 8rem 3rem;
   @media (max-width: 920px) {
-    padding-bottom: 10rem;
+
     padding-top: 23rem;
   }
 `;

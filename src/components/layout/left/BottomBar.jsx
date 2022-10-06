@@ -9,10 +9,10 @@ const BottomBar = () => {
     <Container>
       <div className="wrapper">
       
-          <a href='https://www.facebook.com/' target="_blank"><FaLinkedinIn /></a>
-          <a href='https://www.facebook.com/' target="_blank"><AiOutlineGithub /></a>
-          <a href='https://www.facebook.com/' target="_blank"><AiOutlineTwitter /></a>
-          <a href='https://www.facebook.com/' target="_blank"><FaFacebookF /></a>
+          <a href='https://www.linkedin.com/in/md-shamim-hossain-40a2051a0/' target="_blank"><FaLinkedinIn /></a>
+          <a href='https://github.com/shamim1845' target="_blank"><AiOutlineGithub /></a>
+          <a href='https://twitter.com/shamim94949' target="_blank"><AiOutlineTwitter /></a>
+          <a href='https://www.facebook.com/mdsamimhossain.samim.505' target="_blank"><FaFacebookF /></a>
       
       </div>
     </Container>

@@ -11,16 +11,21 @@ import { useContext } from "react";
 import { AppContext } from "../../../App";
 import SmoothScroll from "../../SmoothScroll";
 import UseWindowSize from "../../Hooks/UseWindowSize";
+import Footer from "../../Footer";
 
 
 const MainArea = () => {
-  const { navRight } = useContext(AppContext);
+  const { navRight, setNavLeft, setNavRight } = useContext(AppContext);
 const [width] = UseWindowSize();
 
+const navBarHandler = () => {
+  setNavLeft(false)
+  setNavRight(false)
+}
 
 
   return (
-    <Container  id="my-scrollbar"  className={`${navRight ? "content_move_left" : "content_move_right"}`}>
+    <Container onScroll={() => navBarHandler()}  id="my-scrollbar"  className={`${navRight ? "content_move_left" : "content_move_right"}`}>
       <ScroolContainer>
         {
           width> 920 && <SmoothScroll data = {`my-scrollbar`}/> 
@@ -37,6 +42,7 @@ const [width] = UseWindowSize();
           <Route path="/blog" element={<Blog />} />
           <Route path="*" element={<Error />} />
         </Routes>
+          <Footer />
       </Content>
     </Container>
   );
@@ -49,8 +55,7 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
+  overflow-y: auto;
       
 
 

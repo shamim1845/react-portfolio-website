@@ -24,14 +24,14 @@ export default HomeBanner;
 
 const Container = styled.div`
   width: 100%;
-  height: 35rem;
-  padding-top: 3rem;
+  
+  margin-top: 3rem;
   color: ${({ theme }) => theme.lightColor};
   position: relative;
 
   @media (max-width: 920px) {
     align-items: center;
-    padding-top: 0rem;
+    margin-top: 0rem;
   }
   .shadow {
     width: 100%;
@@ -56,22 +56,26 @@ const Container = styled.div`
     gap: 2rem;
     z-index: 2;
     position: absolute;
-    padding: 0 5rem;
+    padding: 5rem;
     width: 100%;
-    height: 100%;
+   height: 35rem;
+
+   @media (max-width: 385px) {
+      padding: 2rem;
+      }
 
     h1 {
       line-height: 5rem;
       text-align: start;
-      font-size: 4.5rem;
+      font-size: 5rem;
       @media (max-width: 1100px) {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
       }
       @media (max-width: 920px) {
         font-size: 4.5rem;
       }
       @media (max-width: 600px) {
-        font-size: 4rem;
+        font-size: 4.5rem;
       }
       @media (max-width: 385px) {
         font-size: 3.5rem;
@@ -86,7 +90,7 @@ const Container = styled.div`
     &::after {
       content: "";
       width: 100%;
-      height: 100%;
+      /* height: calc(100% - 3rem); */
       position: absolute;
       top: 0;
       left: 0;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import styled from "styled-components";
 import HamburgerMenu from "../../HamburgerMenu";
 import { NavLink } from "react-router-dom";
@@ -16,8 +16,18 @@ const RightSidebar = ({ navRight, setNavRight }) => {
     setCurrPage(pathname.slice(1, pathname.length) || "home");
   }, [pathname]);
 
+  const RightSidebarRef = useRef();
+  useEffect(() => {
+     document.addEventListener("mousedown", (e) => {
+      if (!RightSidebarRef.current.contains(e.target)) {
+        setNavRight(false);
+      }
+    });
+  }, []);
+
   return (
     <Container
+    ref={RightSidebarRef}
       className={`${navRight ? "rightSidebarMove" : "rightSidebarReset"}`}
     >
       <RightSidebergerTop>

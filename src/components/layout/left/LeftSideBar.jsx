@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { AppContext } from "../../../App";
 import BottomBar from "./BottomBar";
@@ -6,10 +6,21 @@ import Profile from "./Profile";
 import Skills from "./Skills";
 
 const LeftSideBar = () => {
-  const { navLeft } = useContext(AppContext);
+  const { navLeft, setNavLeft } = useContext(AppContext);
+
+  const LeftSidebarRef = useRef();
+  useEffect(() => {
+    document.addEventListener("mousedown", (e) => {
+      if (!LeftSidebarRef.current.contains(e.target)) {
+        setNavLeft(false);
+      }
+    });
+  }, []);
+
 
   return (
     <Container
+      ref={LeftSidebarRef}
       className={`${navLeft ? "leftSidebarReset" : "leftSidebarMove"}`}
     >
       <Wrapper>

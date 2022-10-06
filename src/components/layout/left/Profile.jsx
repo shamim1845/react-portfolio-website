@@ -222,5 +222,6 @@ const Container = styled.div`
   .avatar_desc {
     text-align: center;
     margin-bottom: 1rem;
+    text-transform: capitalize;
   }
 `;

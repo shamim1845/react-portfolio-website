@@ -12,9 +12,9 @@ const AutoWriting = () => {
   React.useEffect(() => {
     const options = {
       strings: [
-        " Some are slanted",
-        " Some  are bold",
-        " HTML characters &times; &copy;",
+        " Md Shamim Hossain.",
+        " a Web Designer.",
+        " a Web Developer.",
       ],
       typeSpeed: 50,
       backSpeed: 50,
@@ -37,7 +37,7 @@ const AutoWriting = () => {
         <BsChevronLeft />
         <span className="code">code</span> <BsChevronRight />
       </span>
-      I build <span className="auto_writing" ref={el} />
+      I'm <span className="auto_writing" ref={el} />
       <span className="code_wrap">
         <BsChevronLeft /> <span className="code">/code</span> <BsChevronRight />
       </span>
@@ -52,6 +52,10 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   font-size: 1.6rem;
+
+  @media (max-width: 385px) {
+        height: 5rem;
+      }
   .code_wrap {
     display: flex;
     justify-content: center;
@@ -63,7 +67,7 @@ const Container = styled.div`
   }
 
   .auto_writing {
-    padding-left: 0.2rem;
+    padding-left: 0.5rem;
     font-size: 1.6rem;
   }
 `;
