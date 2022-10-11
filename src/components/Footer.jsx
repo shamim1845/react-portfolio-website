@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Footer = () => {
   return (
     <Container>
-        <div className="left">© {new Date().getFullYear()} Md Shamim Hossain</div>
+        <div className="left">© Copyright  {new Date().getFullYear()}. Made by <span> <Link to={'/'}>Shamim</Link> </span></div>
     </Container>
   )
 }
@@ -27,5 +28,18 @@ const Container = styled.footer`
      
         text-align: center;
         
+    }
+
+    div{
+      span{
+        a{
+
+          color: ${({theme}) => theme.lightColor};
+          text-decoration: underline;
+          &:hover{
+            color: ${({theme}) => theme.orangeColor};
+          }
+        }
+      }
     }
 `

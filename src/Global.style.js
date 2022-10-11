@@ -66,6 +66,13 @@ const GlobalStyle = createGlobalStyle`
     height: 1px;
     opacity: 0.3;
 }
+.divider_orange{
+    background-color: ${({ theme }) => theme.orangeColor};
+    width: 5rem;
+    height: .5rem;
+  border-radius: 0.5rem;
+    margin: 1rem auto;
+}
  
 .container{
     width: 100%;
@@ -75,7 +82,6 @@ const GlobalStyle = createGlobalStyle`
     @media (max-width: 920px) {
     height: auto;
     padding:0 1rem 5rem 1rem;
-    margin: 0;
 
     
 .scrollbar-track{

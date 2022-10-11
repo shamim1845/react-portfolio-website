@@ -8,11 +8,11 @@ const LanguageSkills = () => {
 
     <Container>
         <div className="skill_wrapper">
-          <Progressbar start={0} end={65} delay={20}/>
+          <Progressbar start={0} end={60} delay={20}/>
             <p className='language'>English</p>
         </div>
         <div className="skill_wrapper">
-          <Progressbar start={0} end={99} delay={20}/>
+          <Progressbar start={0} end={95} delay={20}/>
             <p className='language'>Bengali</p>
         </div>
         <div className="skill_wrapper">

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ContactInfoCard from "../../components/ContactInfoCard";
 import ContactForm from "../ContactForm";
+import ContentHeaderInfo from "../ContentHeaderInfo";
 
 
 const MyServices = () => {
@@ -16,15 +17,15 @@ const MyServices = () => {
       telegram: "@samim1845",
       WhatsApps: "01631-132907",
     },
-    {
-      support_service: "+78 (098) 326 11 22",
-      office: "+78 (098) 326 11 22, ",
-      personal: "01631-132907",
-    },
+ 
   ];
   return (
     <Container
       className="container">
+        <ContentHeaderInfo
+        title='Contact'
+        desc='Feel free to Contact me by submitting the form below and I will get back to you as soon as possible.'
+         />
       <h4>Contact information</h4>
       <div className="cards">
         {data?.map((card, index) => {
@@ -42,6 +43,7 @@ const MyServices = () => {
 export default MyServices;
 
 const Container = styled.div`
+margin-top: -5rem;
   h4 {
     color: ${({ theme }) => theme.lightColor};
     padding: 2.5rem 0;

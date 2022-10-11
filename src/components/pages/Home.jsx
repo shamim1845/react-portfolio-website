@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Experience from "../Experience";
+import AboutMe from "../AboutMe";
 import HomeBanner from "../HomeBanner";
-import MyServices from "../MyServices";
+import MyProjects from "../MyProjects";
 
 const Home = () => {
 
@@ -10,10 +10,12 @@ const Home = () => {
     <Container  className="container" >
 
       <HomeBanner />
-      <Experience />
-      <MyServices />
-      <MyServices />
-      <MyServices />
+
+
+      <AboutMe />
+  
+      <MyProjects />
+    
      
     </Container>
   );

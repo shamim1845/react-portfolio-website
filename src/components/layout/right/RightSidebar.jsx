@@ -18,7 +18,7 @@ const RightSidebar = ({ navRight, setNavRight }) => {
 
   const RightSidebarRef = useRef();
   useEffect(() => {
-     document.addEventListener("mousedown", (e) => {
+    document.addEventListener("mousedown", (e) => {
       if (!RightSidebarRef.current.contains(e.target)) {
         setNavRight(false);
       }
@@ -27,7 +27,7 @@ const RightSidebar = ({ navRight, setNavRight }) => {
 
   return (
     <Container
-    ref={RightSidebarRef}
+      ref={RightSidebarRef}
       className={`${navRight ? "rightSidebarMove" : "rightSidebarReset"}`}
     >
       <RightSidebergerTop>
@@ -66,21 +66,21 @@ const RightSidebar = ({ navRight, setNavRight }) => {
                   >
                     Portfolio
                   </NavLink>
-                  <div>
+                  {/* <div>
                     {expand ? (
                       <RiArrowDropDownLine size={20} />
                     ) : (
                       <RiArrowDropRightLine size={20} />
                     )}
-                  </div>
+                  </div> */}
                 </div>
-                {expand && (
+                {/* {expand && (
                   <ul>
                     <li>Portfolio 1</li>
                     <li>Portfolio 2</li>
                     <li>Portfolio 3</li>
                   </ul>
-                )}
+                )} */}
               </li>
               <li>
                 <NavLink
@@ -98,14 +98,14 @@ const RightSidebar = ({ navRight, setNavRight }) => {
                   Contact
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   to="/blog"
                   className={({ isActive }) => (isActive ? "active_menu" : "")}
                 >
                   Blog
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           </Navbar>
         ) : (
@@ -140,7 +140,6 @@ const Container = styled.div`
   @media (max-width: 920px) {
     position: fixed;
     top: 0;
-
   }
 `;
 const RightSidebergerTop = styled.div`
@@ -151,7 +150,7 @@ const RightSidebergerTop = styled.div`
   display: flex;
   align-items: center;
   @media (max-width: 920px) {
-     margin-top: -0.2rem;
+    margin-top: -0.2rem;
   }
 `;
 
@@ -187,7 +186,7 @@ const RightSidebergerBottom = styled.div`
     justify-content: center;
     align-items: center;
     cursor: pointer;
-
+    transition: 0.4s ease-in-out;
     animation: move 0.7s ease-in-out;
 
     @keyframes move {
@@ -198,6 +197,9 @@ const RightSidebergerBottom = styled.div`
       100% {
         transform: translateX(0rem);
       }
+    }
+    &:hover {
+      color: ${({ theme }) => theme.lightColor};
     }
     .active {
       display: flex;

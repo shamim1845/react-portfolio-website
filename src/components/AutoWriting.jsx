@@ -11,11 +11,7 @@ const AutoWriting = () => {
 
   React.useEffect(() => {
     const options = {
-      strings: [
-        " Md Shamim Hossain.",
-        " a Web Designer.",
-        " a Web Developer.",
-      ],
+      strings: [" a Web Developer.", " a Web Designer."],
       typeSpeed: 50,
       backSpeed: 50,
       loop: true,
@@ -54,8 +50,8 @@ const Container = styled.div`
   font-size: 1.6rem;
 
   @media (max-width: 385px) {
-        height: 5rem;
-      }
+    height: 5rem;
+  }
   .code_wrap {
     display: flex;
     justify-content: center;

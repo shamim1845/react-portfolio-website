@@ -3,6 +3,9 @@ import { FaExpand } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { AppContext } from "../../../App";
+import img from "../../../assets/images/shamim-avatar2.jpg";
+import Picture from "../../../assets/images/shamim.jpg";
+import Fancybox from "../../FancyBox";
 
 const Profile = () => {
   const [show, setShow] = useState(true);
@@ -22,14 +25,19 @@ const Profile = () => {
             <BsThreeDotsVertical />
           </div>
           <div className="avatar_wrapper">
-            <img
-              src="https://elanta.app/nazar/arter-demo-new/img/face-1.jpg"
-              alt="Profile Pic"
-            />
-            <span>
-              {" "}
-              <FaExpand />
-            </span>
+            <Fancybox options={{ infinite: false }}>
+              <div
+                data-fancybox="responsive"
+                data-src={Picture}
+                data-sizes="(max-width: 600px) 480px, 800px"
+              >
+                <img src={img} alt="Profile Pic" />
+                <span>
+                  {" "}
+                  <FaExpand size={12} />
+                </span>
+              </div>
+            </Fancybox>
             <div
               className="lamp_light"
               onMouseOver={() => setShow(true)}
@@ -82,35 +90,52 @@ const Container = styled.div`
     position: relative;
 
     .avatar_wrapper {
-      width: 13rem;
-      height: 13rem;
-      border-radius: 50%;
+      width: 9rem;
+      height: 9rem;
       position: relative;
-      padding: 2rem;
+      margin: 2rem;
+      cursor: pointer;
+      &:hover span {
+        opacity: 0.5;
+      }
 
       img {
         width: 100%;
         height: 100%;
         border-radius: 50%;
         object-fit: cover;
+        object-position: top;
       }
       span {
-        position: absolute;
-        top: 40%;
-        left: 40%;
-        color: red;
-        cursor: pointer;
-        font-size: 2rem;
-      }
-      .lamp_light {
-        position: absolute;
-        right: 0.9rem;
-        bottom: 2rem;
+        background: ${({ theme }) => theme.bg2};
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
         transition: 0.4s ease-in-out;
-        cursor: pointer;
+        position: absolute;
+        top: 35%;
+        left: 36%;
+        opacity: 0;
+
+        &:hover {
+          opacity: 1 !important;
+        }
+
+        svg {
+          color: ${({ theme }) => theme.lightColor};
+        }
+      }
+      .lamp_light {
+        position: absolute;
+        right: -1rem;
+        bottom: 0rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s ease-in-out;
 
         .lamp_light_wrapper {
           display: flex;
@@ -195,10 +220,10 @@ const Container = styled.div`
     }
 
     .menu_btn {
-       position: absolute;
+      position: absolute;
       top: 1.6rem;
       right: 2rem;
-  
+
       color: #8c8c8e;
       cursor: pointer;
       font-size: 2rem;
