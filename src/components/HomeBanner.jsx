@@ -12,7 +12,8 @@ const HomeBanner = () => {
         <h1> HEY, <br /> I'M MD SHAMIM HOSSAIN</h1>
 <AutoWriting />
         <h5>
-        A Front-End Web Developer. Building the Front-End of Websites and Web Applications leads to the overall product's success.
+        A Front-End Web Developer, who Builds the Front-End of Websites and Web Applications that leads to the overall product's success.
+
         </h5>
         <Link to='/portfolio'>   <Button>explore now</Button></Link>
 

@@ -10,6 +10,10 @@ const Button = ({children}) => {
 export default Button;
 
 const Container = styled.button`
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem;
     text-transform: uppercase;
      box-shadow: 0 1px 4px 0 rgb(15 15 20 / 10%);
     color: #20202a;

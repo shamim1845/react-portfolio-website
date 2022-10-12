@@ -31,9 +31,8 @@ const ContactForm = () => {
         "3B5_KCYznJHc6RLTz"
       )
       .then(
-        (result) => {
-          console.log(result.text);
-          alert("Email send sucessfully.");
+        () => {
+              alert("Email send sucessfully.");
           setValue({
             name: "",
             email: "",

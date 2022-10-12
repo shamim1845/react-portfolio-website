@@ -1,24 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FaExpand } from "react-icons/fa";
 import styled from "styled-components";
 import { BsChevronRight } from "react-icons/bs";
 import Fancybox from "./FancyBox";
 
 const ProjectsCard = ({ card }) => {
+ 
+
+
   return (
     <Container>
       <CardTop>
         <Fancybox options={{ infinite: false }}>
           <div
             data-fancybox="gallery"
-            data-src="https://elanta.app/nazar/arter-demo-new/img/works/original-size/1.jpg"
+            data-src={card.img}
           >
             <FancyExpand>
               <FaExpand size={12} />
             </FancyExpand>
             <img
-              src="https://elanta.app/nazar/arter-demo-new/img/works/original-size/1.jpg"
+              src={card.img}
               alt="project image"
             />
           </div>
@@ -29,7 +32,7 @@ const ProjectsCard = ({ card }) => {
         <h5>{card.title}</h5>
         <p>{card.desc}</p>
         <div className="link">
-          <Link to={card.link}>Read More</Link> <BsChevronRight />
+          <Link to={`/portfolio/${card.id}`}>Read More</Link> <BsChevronRight />
         </div>
       </CardBottom>
     </Container>
