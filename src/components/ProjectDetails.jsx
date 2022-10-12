@@ -57,15 +57,14 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 30vh;
+    gap: 2rem;
+    min-height: 30vh;
     h1 {
       text-align: center;
       color: ${({ theme }) => theme.lightColor};
     }
     h5 {
-      max-width: 60rem;
-      min-height: 7rem;
-      margin-top: 1rem;
+      max-width: 70rem;
       text-align: center;
       color: ${({ theme }) => theme.grayColor};
     }
