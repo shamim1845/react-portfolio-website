@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Button from "./Button";
 import ContentHeaderInfo from "./ContentHeaderInfo";
+import Technology from "./Technology";
 
 const AboutMe = () => {
   return (
@@ -33,7 +34,10 @@ const AboutMe = () => {
           </p>
 
           <div className="btn_container">
-        <Link to='/contact'>  <Button>CONTACT</Button></Link>  
+            <Link to="/contact">
+              {" "}
+              <Button>CONTACT</Button>
+            </Link>
           </div>
         </div>
 
@@ -41,16 +45,16 @@ const AboutMe = () => {
           <h4>My Skills</h4>
 
           <div className="skills">
-            <div className="skill">HTML</div>
-            <div className="skill">CSS</div>
-            <div className="skill">JavaScript</div>
-            <div className="skill">React</div>
-            <div className="skill">GIT</div>
-            <div className="skill">Github</div>
-            <div className="skill">Responsive Design</div>
-            <div className="skill">Node(Basic)</div>
-            <div className="skill">Express(Basic)</div>
-            <div className="skill">MongoDb(Basic)</div>
+            <Technology tech={"HTML"} />
+            <Technology tech={"CSS"} />
+            <Technology tech={"JavaScript"} />
+            <Technology tech={"React"} />
+            <Technology tech={"GIT"} />
+            <Technology tech={"Github"} />
+            <Technology tech={"Responsive Design"} />
+            <Technology tech={"Node(Basic)"} />
+            <Technology tech={"Express(Basic)"} />
+            <Technology tech={"MongoDb(Basic)"} />
           </div>
         </div>
       </div>
@@ -130,7 +134,7 @@ const Container = styled.div`
       gap: 1.2rem;
 
       .skill {
-        background: ${({ theme }) => theme.grayColor};
+        background: ${({ theme }) => theme.bg1};
         padding: 1.2rem 2.4rem;
         border-radius: 0.5rem;
         font-size: 1.3rem;

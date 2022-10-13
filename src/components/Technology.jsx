@@ -17,7 +17,7 @@ const Container = styled.div`
   
 
       .skill {
-        background: ${({ theme }) => theme.grayColor};
+        background: ${({ theme }) => theme.bg1};
         padding: 1.2rem 2.4rem;
         border-radius: 0.5rem;
         font-size: 1.3rem;
